@@ -1,555 +1,89 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EcoSphere | Carbon Footprint Tracker & Smart Assistant</title>
-  <meta name="description" content="Track your carbon footprint, take actionable green steps, and get personalized eco-insights with our smart context-aware advisor.">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome to Firebase Hosting</title>
 
-  <!-- A11y Skip Link -->
-  <a href="#main-content" class="skip-link">Skip to main content</a>
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/12.15.0/firebase-app-compat.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/12.15.0/firebase-auth-compat.js"></script>
+    <script defer src="/__/firebase/12.15.0/firebase-database-compat.js"></script>
+    <script defer src="/__/firebase/12.15.0/firebase-firestore-compat.js"></script>
+    <script defer src="/__/firebase/12.15.0/firebase-functions-compat.js"></script>
+    <script defer src="/__/firebase/12.15.0/firebase-messaging-compat.js"></script>
+    <script defer src="/__/firebase/12.15.0/firebase-storage-compat.js"></script>
+    <script defer src="/__/firebase/12.15.0/firebase-analytics-compat.js"></script>
+    <script defer src="/__/firebase/12.15.0/firebase-remote-config-compat.js"></script>
+    <script defer src="/__/firebase/12.15.0/firebase-performance-compat.js"></script>
+    <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
 
-  <div class="app-container">
-    <!-- Header Landmark -->
-    <header>
-      <div class="logo-section">
-        <svg class="logo-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m12.728 12.728l.707-.707M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-        </svg>
-        <h1>EcoSphere</h1>
-      </div>
-      
-      <div class="header-controls">
-        <button id="theme-toggle" class="icon-btn" aria-label="Toggle dark mode" title="Toggle dark mode">
-          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" id="theme-icon" aria-hidden="true">
-            <!-- Moon Icon by default -->
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
-          </svg>
-        </button>
-        <button id="settings-btn" class="icon-btn" aria-label="Open settings" title="Open settings">
-          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-          </svg>
-        </button>
-      </div>
-    </header>
+    <style media="screen">
+      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
+      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
+      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
+      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
+      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
+      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
+      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
+      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
+      @media (max-width: 600px) {
+        body, #message { margin-top: 0; background: white; box-shadow: none; }
+        body { border-top: 16px solid #ffa100; }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="message">
+      <h2>Welcome</h2>
+      <h1>Firebase Hosting Setup Complete</h1>
+      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
+      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
+    </div>
+    <p id="load">Firebase SDK Loading&hellip;</p>
 
-    <!-- Navigation Landmark with ARIA tablist -->
-    <nav class="tab-navigation" aria-label="Main Navigation">
-      <ul class="tab-list" role="tablist">
-        <li role="presentation">
-          <button id="tab-dashboard" class="tab-trigger" role="tab" aria-selected="true" aria-controls="panel-dashboard" tabindex="0">
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2H6a2 2 0 01-2-2v-4zM14 16a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2h-2a2 2 0 01-2-2v-4z"></path>
-            </svg>
-            Dashboard
-          </button>
-        </li>
-        <li role="presentation">
-          <button id="tab-calculator" class="tab-trigger" role="tab" aria-selected="false" aria-controls="panel-calculator" tabindex="-1">
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 11h.01M12 7h.01M9 11h.01M12 14h.01M15 11h.01M15 7h.01M5 3h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2z"></path>
-            </svg>
-            Calculator
-          </button>
-        </li>
-        <li role="presentation">
-          <button id="tab-actions" class="tab-trigger" role="tab" aria-selected="false" aria-controls="panel-actions" tabindex="-1">
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>
-            </svg>
-            Action Center
-          </button>
-        </li>
-        <li role="presentation">
-          <button id="tab-assistant" class="tab-trigger" role="tab" aria-selected="false" aria-controls="panel-assistant" tabindex="-1">
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
-            </svg>
-            Eco-Advisor
-          </button>
-        </li>
-      </ul>
-    </nav>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const loadEl = document.querySelector('#load');
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+        // // The Firebase SDK is initialized and available here!
+        //
+        // firebase.auth().onAuthStateChanged(user => { });
+        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
+        // firebase.firestore().doc('/foo/bar').get().then(() => { });
+        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
+        // firebase.messaging().requestPermission().then(() => { });
+        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
+        // firebase.analytics(); // call to activate
+        // firebase.analytics().logEvent('tutorial_completed');
+        // firebase.performance(); // call to activate
+        //
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
 
-    <!-- Main Content Landmark -->
-    <main id="main-content" tabindex="-1">
-
-      <!-- ==========================================
-           TAB PANEL: DASHBOARD
-           ========================================== -->
-      <section id="panel-dashboard" class="page-section" role="tabpanel" aria-labelledby="tab-dashboard">
-        <div>
-          <h2 class="section-title">Your Green Dashboard</h2>
-          <p class="section-subtitle">Understand where you stand and track your progress toward a lower carbon life.</p>
-        </div>
-
-        <div class="dashboard-grid">
-          <!-- Left Column: Primary Metrics -->
-          <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-            <div class="card hero-metric">
-              <h3 class="card-title">Annual Carbon Footprint</h3>
-              <div class="metric-value-container">
-                <span id="display-total-carbon" class="metric-value">4,000</span>
-                <span class="metric-unit">kg CO2e / yr</span>
-              </div>
-              <div id="display-comparison" class="metric-comparison good">
-                Loading comparison...
-              </div>
-
-              <!-- Mini gamification tracker -->
-              <div class="gamification-mini">
-                <div id="display-level" class="level-badge" aria-label="Level 1">1</div>
-                <div class="xp-progress">
-                  <div class="xp-label">
-                    <span>Rank: Eco-Novice</span>
-                    <span id="display-xp-text">0 / 300 XP</span>
-                  </div>
-                  <div class="progress-bar-container">
-                    <div id="display-xp-bar" class="progress-bar" style="width: 0%" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Impact Info Card -->
-            <div class="card">
-              <h3 class="card-title">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width:1.25rem; height:1.25rem;" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                </svg>
-                Climate Quick Facts
-              </h3>
-              <p style="font-size: 0.9rem; margin-bottom: 0.75rem;">
-                The average carbon footprint per person in India is about <strong>1,900 kg (1.9 tonnes)</strong> of CO2e per year, which is lower than the global average of <strong>4,000 kg</strong>. However, urban Indian lifestyles often exceed 4,000 kg. To avoid a 2°C rise in global temperatures, the personal footprint needs to drop under <strong>2,000 kg</strong>.
-              </p>
-              <p style="font-size: 0.9rem; color: var(--text-secondary);">
-                Update your numbers in the <strong>Calculator</strong> tab to see your footprint personalized, then check off items in the <strong>Action Center</strong> to track real-time offsets!
-              </p>
-            </div>
-          </div>
-
-          <!-- Right Column: Chart Breakdown -->
-          <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
-            <div>
-              <h3 class="card-title">Footprint Breakdown</h3>
-              <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:1.5rem;">
-                See which parts of your lifestyle contribute the most to your global impact.
-              </p>
-            </div>
-
-            <div class="chart-container">
-              <!-- SVG Donut Chart -->
-              <svg width="200" height="200" class="svg-donut" aria-label="Carbon footprint category breakdown donut chart">
-                <circle cx="100" cy="100" r="80" fill="transparent" stroke="var(--border-color)" stroke-width="20" />
-                <!-- Donut segments will be injected via JS -->
-                <g id="donut-segments-group"></g>
-              </svg>
-              <div class="donut-center-text">
-                <span id="donut-center-pct" class="donut-center-num">0%</span>
-                <span id="donut-center-lbl" class="donut-center-lbl">Largest</span>
-              </div>
-            </div>
-
-            <div class="chart-legend" id="chart-legend-container" role="presentation">
-              <!-- Legend items injected via JS -->
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ==========================================
-           TAB PANEL: CALCULATOR WIZARD
-           ========================================== -->
-      <section id="panel-calculator" class="page-section" role="tabpanel" aria-labelledby="tab-calculator" aria-hidden="true">
-        <div>
-          <h2 class="section-title">Carbon Footprint Calculator</h2>
-          <p class="section-subtitle">Answer a few questions about your energy, travel, diet, and shopping habits to calculate your carbon impact.</p>
-        </div>
-
-        <div class="card" style="max-width: 700px; margin: 0 auto; width: 100%;">
-          <!-- Wizard progress bar -->
-          <div class="wizard-progress" role="presentation">
-            <div id="wizard-progress-bar" class="wizard-progress-bar" style="width: 0%"></div>
-            <div class="wizard-step-node" data-active="true">1</div>
-            <div class="wizard-step-node">2</div>
-            <div class="wizard-step-node">3</div>
-            <div class="wizard-step-node">4</div>
-          </div>
-
-          <form id="footprint-form" novalidate>
-            <!-- STEP 1: HOME ENERGY -->
-            <fieldset id="calc-step-1" class="wizard-step-content" aria-labelledby="legend-step-1">
-              <legend id="legend-step-1" class="visually-hidden">Step 1: Home Energy</legend>
-              <h3 style="font-size:1.25rem; font-weight:700;">Home Energy Consumption</h3>
-              <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:1rem;">Provide your monthly household utility estimates.</p>
-              
-              <div class="form-group">
-                <label for="input-electricity">Electricity Usage (kWh / month)</label>
-                <div class="range-container">
-                  <input type="range" id="input-electricity" min="0" max="2000" step="50" value="300" aria-describedby="hint-electricity">
-                  <span id="val-electricity" class="range-val-bubble">300</span>
-                </div>
-                <span id="hint-electricity" class="form-hint">Average Indian home uses ~150 to 300 kWh/month.</span>
-              </div>
-
-              <div class="form-group">
-                <label for="input-gas">Piped Natural Gas Usage (SCM / month)</label>
-                <div class="range-container">
-                  <input type="range" id="input-gas" min="0" max="150" step="5" value="15" aria-describedby="hint-gas">
-                  <span id="val-gas" class="range-val-bubble">15</span>
-                </div>
-                <span id="hint-gas" class="form-hint">Typically ranges from 5 to 30 SCM/month for standard households.</span>
-              </div>
-
-              <div class="form-group">
-                <label for="input-oil">LPG Cylinders Used (Cylinders / month)</label>
-                <div class="range-container">
-                  <input type="range" id="input-oil" min="0" max="5" step="0.5" value="1" aria-describedby="hint-oil">
-                  <span id="val-oil" class="range-val-bubble">1</span>
-                </div>
-                <span id="hint-oil" class="form-hint">A standard 14.2 kg LPG cylinder lasts around 1 to 2 months for a family.</span>
-              </div>
-
-              <div class="form-group">
-                <label for="input-waste">Household Waste Generated (kg / week)</label>
-                <div class="range-container">
-                  <input type="range" id="input-waste" min="0" max="100" step="5" value="15" aria-describedby="hint-waste">
-                  <span id="val-waste" class="range-val-bubble">15</span>
-                </div>
-                <span id="hint-waste" class="form-hint">Includes trash and food scraps. Average Indian household generates ~5 kg of waste per week.</span>
-              </div>
-
-              <div class="form-group" style="margin-top: 0.5rem;">
-                <label class="checkbox-card" for="input-recycle">
-                  <input type="checkbox" id="input-recycle" checked>
-                  <div>
-                    <strong>We recycle and compost</strong>
-                    <p style="font-size:0.8rem; color:var(--text-secondary); margin-top:0.2rem;">
-                      Actively recycling metal, paper, glass, and composting reduces your net waste footprint by 40%.
-                    </p>
-                  </div>
-                </label>
-              </div>
-            </fieldset>
-
-            <!-- STEP 2: TRANSPORTATION -->
-            <fieldset id="calc-step-2" class="wizard-step-content" aria-labelledby="legend-step-2" aria-hidden="true">
-              <legend id="legend-step-2" class="visually-hidden">Step 2: Transportation & Travel</legend>
-              <h3 style="font-size:1.25rem; font-weight:700;">Transportation & Aviation</h3>
-              <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:1rem;">Estimate your annual travel habits.</p>
-
-              <div class="form-group">
-                <label for="input-vehicle-type">Primary Vehicle Type</label>
-                <select id="input-vehicle-type" class="form-select">
-                  <option value="ice">Gasoline / Diesel Passenger Car</option>
-                  <option value="ev">Electric Vehicle (EV)</option>
-                  <option value="none">No Personal Vehicle</option>
-                </select>
-              </div>
-
-              <div id="vehicle-fields">
-                <div class="form-group">
-                  <label for="input-vehicle-miles">Annual Driving Distance (km / year)</label>
-                  <div class="range-container">
-                    <input type="range" id="input-vehicle-miles" min="0" max="50000" step="1000" value="10000" aria-describedby="hint-miles">
-                    <span id="val-vehicle-miles" class="range-val-bubble">10000</span>
-                  </div>
-                  <span id="hint-miles" class="form-hint">Average annual driving distance is about 10,000 km.</span>
-                </div>
-
-                <div class="form-group" id="mpg-group">
-                  <label for="input-vehicle-mpg">Average Fuel Efficiency (km / Litre - km/l)</label>
-                  <div class="range-container">
-                    <input type="range" id="input-vehicle-mpg" min="5" max="30" step="1" value="15" aria-describedby="hint-mpg">
-                    <span id="val-vehicle-mpg" class="range-val-bubble">15</span>
-                  </div>
-                  <span id="hint-mpg" class="form-hint">Standard petrol cars get ~12-18 km/l. Highly efficient hybrids get 40+ km/l.</span>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label for="input-transit-miles">Public Transit Travel (km / week)</label>
-                <div class="range-container">
-                  <input type="range" id="input-transit-miles" min="0" max="500" step="10" value="50" aria-describedby="hint-transit">
-                  <span id="val-transit-miles" class="range-val-bubble">50</span>
-                </div>
-                <span id="hint-transit" class="form-hint">Includes local trains, metro, buses, and auto-rickshaws.</span>
-              </div>
-
-              <div class="form-group">
-                <label for="input-flights">Commercial Flights Taken (hours / year)</label>
-                <div class="range-container">
-                  <input type="range" id="input-flights" min="0" max="100" step="2" value="6" aria-describedby="hint-flights">
-                  <span id="val-flights" class="range-val-bubble">6</span>
-                </div>
-                <span id="hint-flights" class="form-hint">A domestic Indian round trip (e.g. Mumbai to Delhi) is about 4-5 hours. International travel adds significantly more.</span>
-              </div>
-            </fieldset>
-
-            <!-- STEP 3: DIET & FOOD -->
-            <fieldset id="calc-step-3" class="wizard-step-content" aria-labelledby="legend-step-3" aria-hidden="true">
-              <legend id="legend-step-3" class="visually-hidden">Step 3: Diet & Food Habits</legend>
-              <h3 style="font-size:1.25rem; font-weight:700;">Dietary Habits</h3>
-              <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:1rem;">Select the choice that best matches your typical diet.</p>
-
-              <div class="choice-grid">
-                <label class="choice-card" for="diet-high-meat">
-                  <input type="radio" name="dietType" id="diet-high-meat" value="high-meat" checked>
-                  <span class="choice-icon" aria-hidden="true">🍖</span>
-                  <strong>High Meat</strong>
-                  <span style="font-size:0.75rem; color:var(--text-secondary);">Red meat daily</span>
-                </label>
-
-                <label class="choice-card" for="diet-low-meat">
-                  <input type="radio" name="dietType" id="diet-low-meat" value="low-meat">
-                  <span class="choice-icon" aria-hidden="true">🍗</span>
-                  <strong>Low Meat</strong>
-                  <span style="font-size:0.75rem; color:var(--text-secondary);">Mostly poultry/fish</span>
-                </label>
-
-                <label class="choice-card" for="diet-vegetarian">
-                  <input type="radio" name="dietType" id="diet-vegetarian" value="vegetarian">
-                  <span class="choice-icon" aria-hidden="true">🍳</span>
-                  <strong>Vegetarian</strong>
-                  <span style="font-size:0.75rem; color:var(--text-secondary);">No meat, has dairy</span>
-                </label>
-
-                <label class="choice-card" for="diet-vegan">
-                  <input type="radio" name="dietType" id="diet-vegan" value="vegan">
-                  <span class="choice-icon" aria-hidden="true">🥗</span>
-                  <strong>Vegan</strong>
-                  <span style="font-size:0.75rem; color:var(--text-secondary);">Fully plant-based</span>
-                </label>
-              </div>
-
-              <div class="card" style="margin-top: 2rem; padding: 1.5rem 2rem; background: rgba(var(--hue), 76%, 36%, 0.03); border-left: 4px solid var(--primary-color);">
-                <p style="font-size: 0.88rem; line-height: 1.8;">
-                  <strong>Why does diet matter?</strong> Food production accounts for nearly 26% of global emissions. Beef generates approximately 60 kg of CO2e per kg of meat, while plant-based foods like peas generate only 0.9 kg. Shifting to a vegetarian or low-meat diet is one of the single most effective individual climate actions.
-                </p>
-              </div>
-            </fieldset>
-
-            <!-- STEP 4: SHOPPING & CONSUMPTION -->
-            <fieldset id="calc-step-4" class="wizard-step-content" aria-labelledby="legend-step-4" aria-hidden="true">
-              <legend id="legend-step-4" class="visually-hidden">Step 4: Shopping & Consumer Choices</legend>
-              <h3 style="font-size:1.25rem; font-weight:700;">Shopping & Consumption Habits</h3>
-              <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:1rem;">Select the choice that best matches your shopping and goods acquisition.</p>
-
-              <div class="choice-grid" style="grid-template-columns: repeat(3, 1fr);">
-                <label class="choice-card" for="shop-minimalist">
-                  <input type="radio" name="shoppingHabit" id="shop-minimalist" value="minimalist">
-                  <span class="choice-icon" aria-hidden="true">🌱</span>
-                  <strong>Minimalist</strong>
-                  <span style="font-size:0.75rem; color:var(--text-secondary);">Buy second-hand, low purchases</span>
-                </label>
-
-                <label class="choice-card" for="shop-average">
-                  <input type="radio" name="shoppingHabit" id="shop-average" value="average" checked>
-                  <span class="choice-icon" aria-hidden="true">🛒</span>
-                  <strong>Average</strong>
-                  <span style="font-size:0.75rem; color:var(--text-secondary);">Standard clothes & electronics</span>
-                </label>
-
-                <label class="choice-card" for="shop-heavy">
-                  <input type="radio" name="shoppingHabit" id="shop-heavy" value="heavy">
-                  <span class="choice-icon" aria-hidden="true">🛍️</span>
-                  <strong>Heavy</strong>
-                  <span style="font-size:0.75rem; color:var(--text-secondary);">Frequent new purchases & gadgets</span>
-                </label>
-              </div>
-
-              <div class="card" style="margin-top: 2rem; padding: 1.5rem 2rem; background: rgba(var(--hue), 76%, 36%, 0.03); border-left: 4px solid var(--secondary-color);">
-                <p style="font-size: 0.88rem; line-height: 1.8;">
-                  <strong>The impact of things:</strong> Almost every manufactured product carries "embodied emissions" generated during extraction, refining, manufacturing, and global shipping. Buying second-hand items and maintaining products longer prevents those emissions entirely.
-                </p>
-              </div>
-            </fieldset>
-
-            <!-- Navigation Buttons -->
-            <div class="wizard-nav">
-              <button type="button" id="wizard-prev-btn" class="btn btn-secondary" disabled>
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width:1.15rem; height:1.15rem;" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-                </svg>
-                Previous
-              </button>
-              
-              <div style="display: flex; align-items: center; gap: 0.5rem;">
-                <span id="wizard-realtime-badge" style="font-size:0.85rem; font-weight:700; color:var(--text-secondary); margin-right:1rem;">
-                  Running calculation...
-                </span>
-                
-                <button type="button" id="wizard-next-btn" class="btn btn-primary">
-                  Next
-                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width:1.15rem; height:1.15rem;" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </section>
-
-      <!-- ==========================================
-           TAB PANEL: ACTION CENTER
-           ========================================== -->
-      <section id="panel-actions" class="page-section" role="tabpanel" aria-labelledby="tab-actions" aria-hidden="true">
-        <div>
-          <h2 class="section-title">Green Actions Checklist</h2>
-          <p class="section-subtitle">Earn points, level up, and offset your carbon emissions by checking off eco-actions as you implement them.</p>
-        </div>
-
-        <div class="actions-layout">
-          <!-- Left Column: Categories and Actions -->
-          <div style="display: flex; flex-direction: column; gap: 1rem;">
-            <div class="action-category-tabs" role="tablist" aria-label="Action categories">
-              <button class="action-cat-trigger" data-cat="all" data-active="true" role="tab" aria-selected="true">All Categories</button>
-              <button class="action-cat-trigger" data-cat="home" role="tab" aria-selected="false">Home Energy</button>
-              <button class="action-cat-trigger" data-cat="transport" role="tab" aria-selected="false">Transportation</button>
-              <button class="action-cat-trigger" data-cat="diet" role="tab" aria-selected="false">Diet & Food</button>
-              <button class="action-cat-trigger" data-cat="shopping" role="tab" aria-selected="false">Shopping & Waste</button>
-            </div>
-
-            <div class="action-list" id="action-items-list-container" role="presentation">
-              <!-- Dynamically populated via JS -->
-            </div>
-          </div>
-
-          <!-- Right Column: Sidebar Stats & Custom Actions -->
-          <div class="actions-sidebar">
-            <!-- Points and Level Summary -->
-            <div class="card xp-score-card">
-              <h3 class="card-title" style="justify-content:center; margin-bottom:0.5rem;">Total Points</h3>
-              <div id="actions-xp-value" class="xp-score-val">0</div>
-              <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:0.75rem;">Experience points earned</p>
-              
-              <div class="progress-bar-container" style="margin-top: 1rem; margin-bottom: 0.5rem;">
-                <div id="actions-xp-bar" class="progress-bar" style="width: 0%" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-              <span id="actions-level-text" style="font-size:0.85rem; font-weight:700;">Level 1 Eco-Novice</span>
-            </div>
-
-            <!-- Savings Meter -->
-            <div class="card savings-meter">
-              <h3 class="card-title" style="justify-content:center; margin-bottom:0.5rem;">Active Offsets</h3>
-              <div id="actions-saving-value" class="savings-val">0 kg</div>
-              <p style="font-size:0.85rem; color:var(--text-secondary);">CO2e saved per year</p>
-            </div>
-
-            <!-- Custom Action Card -->
-            <div class="card">
-              <h3 class="card-title">Add Custom Action</h3>
-              <form id="custom-action-form" style="display:flex; flex-direction:column; gap:0.75rem;">
-                <div class="form-group" style="margin-bottom:0;">
-                  <label for="custom-title">Action Name</label>
-                  <input type="text" id="custom-title" class="form-input" placeholder="e.g. Turn down water heater" required>
-                </div>
-                <div class="form-group" style="margin-bottom:0;">
-                  <label for="custom-cat">Category</label>
-                  <select id="custom-cat" class="form-select">
-                    <option value="home">Home Energy</option>
-                    <option value="transport">Transportation</option>
-                    <option value="diet">Diet & Food</option>
-                    <option value="shopping">Shopping & Waste</option>
-                  </select>
-                </div>
-                <div class="form-group" style="margin-bottom:0;">
-                  <label for="custom-saving">Estimated CO2 Saving (kg/yr)</label>
-                  <input type="number" id="custom-saving" class="form-input" min="1" max="10000" value="100" required>
-                </div>
-                <button type="submit" class="btn btn-primary" style="justify-content:center; margin-top:0.5rem;">Add Action</button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ==========================================
-           TAB PANEL: ECO-ADVISOR
-           ========================================== -->
-      <section id="panel-assistant" class="page-section" role="tabpanel" aria-labelledby="tab-assistant" aria-hidden="true">
-        <div>
-          <h2 class="section-title">Eco-Advisor</h2>
-          <p class="section-subtitle">Get personalized green recommendations from an AI assistant trained on your carbon footprint profile.</p>
-        </div>
-
-        <div class="assistant-layout">
-          <!-- Chat display log -->
-          <div class="chat-messages" id="chat-messages-container" role="log" aria-live="polite">
-            <!-- Initial greetings will be generated by JS -->
-          </div>
-
-          <!-- Bottom controls -->
-          <div class="chat-input-area">
-            <!-- Conversational Shortcuts -->
-            <div class="chat-quick-tags" role="presentation">
-              <button class="chat-tag" data-query="How can I reduce my heating bill?">Heating Savings</button>
-              <button class="chat-tag" data-query="What transport changes have the highest impact?">Transport Impact</button>
-              <button class="chat-tag" data-query="Explain how dietary choices affect the climate">Diet Footprint</button>
-              <button class="chat-tag" data-query="How does buying second hand clothes help?">Circular Economy</button>
-            </div>
-
-            <!-- Text Input Row -->
-            <div class="chat-input-row">
-              <button id="clear-chat-btn" class="btn btn-secondary" aria-label="Clear chat history" title="Clear chat history">
-                Clear
-              </button>
-              
-              <div class="chat-input-wrapper">
-                <input type="text" id="chat-input-field" class="chat-input" placeholder="Ask your carbon coach a question..." aria-label="Ask a question about carbon reduction">
-              </div>
-
-              <button id="send-chat-btn" class="btn btn-primary" aria-label="Send message" style="border-radius:24px; padding:0.75rem 1.25rem;">
-                Send
-              </button>
-            </div>
-
-            <div id="display-assistant-status" class="assistant-info-hint">
-              Advisor running in Local Reasoning Mode (Offline Resilient)
-            </div>
-          </div>
-        </div>
-      </section>
-
-    </main>
-
-    <!-- Modal Setting Dialog (Gemini API Key Setup) -->
-    <dialog id="settings-dialog" aria-labelledby="dialog-title">
-      <div class="dialog-header">
-        <h2 id="dialog-title" style="font-size:1.15rem; font-weight:700;">Settings</h2>
-        <button id="close-settings-btn" class="dialog-close" aria-label="Close dialog">&times;</button>
-      </div>
-      <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:1.25rem;">
-        Add a Google Gemini API Key to enable remote AI assistant processing. Leave empty to use the native on-device Prompt API or our local rules reasoning engine.
-      </p>
-      
-      <form id="settings-form">
-        <div class="form-group">
-          <label for="settings-api-key">Gemini API Key</label>
-          <input type="password" id="settings-api-key" class="form-input" placeholder="AIzaSy...">
-        </div>
-        <div style="display:flex; justify-content:flex-end; gap:0.75rem; margin-top:1.5rem;">
-          <button type="button" id="cancel-settings-btn" class="btn btn-secondary">Cancel</button>
-          <button type="submit" class="btn btn-primary">Save Changes</button>
-        </div>
-      </form>
-    </dialog>
-
-    <!-- Accessibility Announcement Landmark -->
-    <div id="a11y-announcer" class="visually-hidden" aria-live="polite" aria-atomic="true"></div>
-
-    <!-- Footer Landmark -->
-    <footer style="text-align:center; padding:2rem 0; border-top:1px solid var(--border-color); font-size:0.8rem; color:var(--text-secondary);">
-      <p>&copy; 2026 EcoSphere Carbon Advisor. All rights reserved. Crafted for Google Hack2Skill.</p>
-    </footer>
-  </div>
-
-  <script type="module" src="app.js"></script>
-</body>
+        try {
+          let app = firebase.app();
+          let features = [
+            'auth', 
+            'database', 
+            'firestore',
+            'functions',
+            'messaging', 
+            'storage', 
+            'analytics', 
+            'remoteConfig',
+            'performance',
+          ].filter(feature => typeof app[feature] === 'function');
+          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
+        } catch (e) {
+          console.error(e);
+          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
+        }
+      });
+    </script>
+  </body>
 </html>
