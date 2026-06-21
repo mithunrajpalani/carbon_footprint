@@ -1,0 +1,14 @@
+{
+  "name": "carbon-footprint-tracker",
+  "version": "1.0.0",
+  "description": "Smart Carbon Footprint Tracker and AI Assistant for Google Hack2Skill",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "dev": "npx -y http-server ./ -p 8080",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "vitest": "^1.6.0"
+  }
+}
